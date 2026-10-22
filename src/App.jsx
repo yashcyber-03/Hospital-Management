@@ -14,6 +14,8 @@ import Invoices from './pages/Invoices'
 import Analytics from './pages/Analytics'
 import AdminDoctors from './pages/AdminDoctors'
 import ReceptionDesk from './pages/ReceptionDesk'
+import Notifications from './pages/Notifications'
+import Billing from './pages/Billing'
 import NotFound from './pages/NotFound'
 import ChatWidget from './components/ChatWidget'
 
@@ -34,6 +36,8 @@ export default function App() {
           <Route path="analytics" element={<Analytics />} />
           <Route path="manage-doctors" element={<AdminDoctors />} />
           <Route path="reception" element={<ReceptionDesk />} />
+          <Route path="notifications" element={<Notifications />} />
+          <Route path="billing" element={<Billing />} />
         </Route>
         <Route path="*" element={<NotFound />} />
       </Routes>
