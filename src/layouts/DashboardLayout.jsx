@@ -1,5 +1,5 @@
 import { NavLink, Outlet, useNavigate } from 'react-router-dom'
-import { HeartPulse, LayoutDashboard, Stethoscope, CalendarDays, FileText, CreditCard, BarChart3, Users, ClipboardList, LogOut } from 'lucide-react'
+import { HeartPulse, LayoutDashboard, Stethoscope, CalendarDays, FileText, CreditCard, BarChart3, Users, ClipboardList, Bell, LogOut } from 'lucide-react'
 import { useAuth } from '../context/AuthContext'
 
 export default function DashboardLayout() {
@@ -10,6 +10,7 @@ export default function DashboardLayout() {
     { to: '/app', label: 'Overview', icon: LayoutDashboard, end: true },
     ...(role === 'patient' ? [{ to: '/app/doctors', label: 'Find doctors', icon: Stethoscope }] : []),
     { to: '/app/appointments', label: 'Appointments', icon: CalendarDays },
+    { to: '/app/notifications', label: 'Notifications', icon: Bell },
     ...(['patient', 'doctor', 'admin'].includes(role) ? [{ to: '/app/records', label: 'Records', icon: FileText }] : []),
     ...(['patient', 'receptionist', 'admin'].includes(role) ? [{ to: '/app/billing', label: 'Billing', icon: CreditCard }] : []),
     ...(['receptionist', 'admin'].includes(role) ? [{ to: '/app/reception', label: 'Reception desk', icon: ClipboardList }] : []),
