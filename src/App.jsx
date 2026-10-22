@@ -13,7 +13,9 @@ import Records from './pages/Records'
 import Invoices from './pages/Invoices'
 import Analytics from './pages/Analytics'
 import AdminDoctors from './pages/AdminDoctors'
+import Billing from './pages/Billing'
 import NotFound from './pages/NotFound'
+import ChatWidget from './components/ChatWidget'
 
 export default function App() {
   return (
@@ -31,9 +33,11 @@ export default function App() {
           <Route path="billing" element={<Invoices />} />
           <Route path="analytics" element={<Analytics />} />
           <Route path="manage-doctors" element={<AdminDoctors />} />
+          <Route path="billing" element={<Billing />} />
         </Route>
         <Route path="*" element={<NotFound />} />
       </Routes>
+      <ChatWidget />
     </AuthProvider>
   )
 }
