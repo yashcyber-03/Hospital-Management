@@ -43,6 +43,7 @@ export default function Auth({ mode }) {
         {err && <p role="alert" className="text-sm text-red-600">{err}</p>}
         {msg && <p role="status" className="text-sm text-green-700">{msg}</p>}
         <button className="btn-primary w-full justify-center" disabled={busy}>{busy ? 'Please wait…' : isRegister ? 'Register' : 'Log in'}</button>
+        {!isRegister && <p className="text-center text-sm"><Link className="text-brand-600 underline" to="/forgot-password">Forgot password?</Link></p>}
         <p className="text-center text-sm text-slate-600">
           {isRegister ? <>Have an account? <Link className="text-brand-600 underline" to="/login">Log in</Link></>
             : <>New here? <Link className="text-brand-600 underline" to="/register">Register</Link></>}
